@@ -79,7 +79,7 @@ jobs:
           pip install awsebcli --upgrade
           eb --version
       # Configure AWS Credentials
-      - name: CI to Docker Hub
+      name: CI to Docker Hub
       on:
         push:
           branches: [ main ]
