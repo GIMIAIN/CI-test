@@ -1,5 +1,5 @@
 from application import application
 if application == "Hello world":
-    test = true
+    test = True
 else:
-    test = false
+    test = False
