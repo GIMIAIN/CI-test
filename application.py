@@ -1,1 +1,1 @@
-
+application = "Hello world"
