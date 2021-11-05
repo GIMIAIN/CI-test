@@ -4,8 +4,12 @@
 name: CI
 
 on:
+  pull_request:
+    branches:
+      -'*'
   push:
-    branches: [main]
+    branches:
+      -'master'
 
 jobs:
   build:
@@ -43,7 +47,7 @@ jobs:
       - name: Run unit tests
         run: |
           python test_application.py
-  deploy-to-test:
+  deploy_test:
     # Only run this job if "build" has ended successfully
     needs:
       - build
@@ -51,15 +55,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE
-      - uses: actions/checkout@v2
-
-      # Set up Python 3.6 environment
-      - name: Set up Python 3.6
-        uses: actions/setup-python@v1
-        with:
-          python-version: "3.6"
-
       # Set up cache for pip
       - name: Get pip cache dir
         id: pip-cache
@@ -78,7 +73,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install awsebcli --upgrade
           eb --version
-      # Configure AWS Credentials
+      # Configure Docker Credentials
       - name: Check Out Repo 
         uses: actions/checkout@v2
 
