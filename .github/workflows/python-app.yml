@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: 3.9.7-slim-buster
+    runs-on: ubuntu-latest
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE
@@ -48,7 +48,7 @@ jobs:
     needs:
       - build
       
-    runs-on: 3.9.7-slim-buster
+    runs-on: ubuntu-latest
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE
