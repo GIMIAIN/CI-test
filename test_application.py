@@ -1,5 +1,6 @@
 from application import application
+from application import app
 if application == "Hello world":
-    test = "1"
+    test = app
 else:
     test = "0"
