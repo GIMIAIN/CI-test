@@ -4,7 +4,8 @@
 name: CI
 
 on: 
-    push: main
+    push:
+    - main
 jobs:
   build:
     runs-on: ubuntu-latest
