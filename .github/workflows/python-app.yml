@@ -22,8 +22,8 @@ jobs:
       # Install dependencies
       - name: Pytest
         run: |
-        sudo pip install pytest
-        pytest
+          sudo pip install pytest
+          pytest
 
   deploy_test:
     # Only run this job if "build" has ended successfully
