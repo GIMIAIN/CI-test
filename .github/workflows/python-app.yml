@@ -20,8 +20,10 @@ jobs:
         with:
           python-version: "3.9"
       # Install dependencies
-      - name: list
-        run: ls -l
+      - name: Pytest
+        run: |
+          sudo pip install pytest
+          pytest test_application.py -v
 
   deploy_test:
     # Only run this job if "build" has ended successfully
@@ -47,7 +49,7 @@ jobs:
 
       - name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v1
         with:
           context: ./
           file: ./Dockerfile
