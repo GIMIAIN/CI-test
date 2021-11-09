@@ -20,10 +20,8 @@ jobs:
         with:
           python-version: "3.9"
       # Install dependencies
-      - name: Python Pylin GitHub Action
-        uses: fylein/python-pytest-github-action@v1
-        with:
-          args: pip3 install -r requirements.txt && pytest test/unit
+      - name: Pytest
+        run: sudo pip install pytest pytest-quickcheck pytest-py
 
   deploy_test:
     # Only run this job if "build" has ended successfully
