@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: "3.6"
       # Install dependencies
- - name: Install pipenv
+      - name: Install pipenv
         run: |
           python -m pip install --upgrade pipenv wheel
       - id: cache-pipenv
@@ -36,7 +36,7 @@ jobs:
       - name: Run test suite
         run: |
           pipenv run test -v
-          
+
   deploy_test:
     # Only run this job if "build" has ended successfully
     needs:
